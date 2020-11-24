@@ -1,13 +1,27 @@
-import './App.css';
+import "./App.css";
+import { Button, Grid, Box } from "@material-ui/core";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello, world!</h1>
-      </header>
-    </div>
-  );
+  // TODO: Find a better way to align content to the middle
+    return (
+        <div className="App">
+            <Box display="flex" style={{marginTop: "50px"}}>
+                <Box m="auto">
+                    <Grid container spacing="1">
+                        <Grid item>
+                            <Button variant="contained">PLUS</Button>
+                        </Grid>
+                        <Grid item>
+                            <Button variant="outlined">MINUS</Button>
+                        </Grid>
+                        <Grid item md="2">
+                            <Button variant="outlined">ON/OFF</Button>
+                        </Grid>
+                    </Grid>
+                </Box>
+            </Box>
+        </div>
+    );
 }
 
 export default App;
