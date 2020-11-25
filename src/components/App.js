@@ -8,6 +8,12 @@ function App() {
             <Box>
                 <Grid container spacing="1">
                     <Grid item>
+                        <Button variant="contained">FAN</Button>
+                    </Grid>
+                    <Grid item>
+                        <Button variant="contained">MODE</Button>
+                    </Grid>
+                    <Grid item>
                         <Button variant="contained">PLUS</Button>
                     </Grid>
                     <Grid item>
