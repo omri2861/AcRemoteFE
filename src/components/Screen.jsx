@@ -11,7 +11,9 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#616b3c",
     },
     test: {
-        height: "3px",
+        height: "1px",
+        color: "black",
+        backgroundColor: "black",
     },
 }));
 
