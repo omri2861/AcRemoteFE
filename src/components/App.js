@@ -1,17 +1,28 @@
 import "./App.css";
-import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Controls from "./Controls/Conrtols";
 import Screen from "./Screen";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+
+const theme = createMuiTheme({
+    palette: {
+        type: "dark",
+        primary: {
+            main: "#FFA500"
+        }
+    },
+});
 
 function App() {
     // TODO: Find a better way to align content to the middle
     return (
         <div className="App">
-            <Paper elevation={10}>
-                <Screen />
-                <Controls />
-            </Paper>
+            <ThemeProvider theme={theme}>
+                <Paper elevation={10}>
+                    <Screen />
+                    <Controls />
+                </Paper>
+            </ThemeProvider>
         </div>
     );
 }
