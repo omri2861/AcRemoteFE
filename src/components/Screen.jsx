@@ -10,22 +10,26 @@ const useStyles = makeStyles((theme) => ({
         // backgroundColor: "#8BAC0F",
         backgroundColor: "#616b3c",
     },
-    test: {
+    divider: {
         height: "1px",
-        color: "black",
         backgroundColor: "black",
     },
+    screenText: {
+        color: "black",
+    }
 }));
 
 function Screen() {
     const classes = useStyles();
+    // TODO: Find out how to do it properly
+    const screenClasses = classes.screenText + " " + classes.root;
 
     return (
-        <Card className={classes.root} variant="outlined">
+        <Card className={screenClasses} variant="outlined">
             <AcUnitIcon />
-            <Divider className={classes.test} />
+            <Divider className={classes.divider} />
             <p style={{ textAlign: "right" }}>9:17</p>
-            <Divider className={classes.test} />
+            <Divider className={classes.divider} />
             <p>21&#xb0;</p>
         </Card>
     );
