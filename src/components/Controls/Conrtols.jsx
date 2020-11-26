@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button, ButtonGroup, Box, makeStyles } from "@material-ui/core";
+import { Grid, Button, ButtonGroup, Box, makeStyles, withStyles } from "@material-ui/core";
 import GridSpace from "./GridSpace";
 
 import ToysRoundedIcon from "@material-ui/icons/ToysRounded";
@@ -13,6 +13,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+const AcButton = withStyles((theme) => ({
+    root: {
+        backgroundColor: theme.palette.grey[600],
+        color: theme.palette.common.white,
+    }
+}))(Button);
+
 function Controls(props) {
     const classes = useStyles();
 
@@ -20,28 +27,28 @@ function Controls(props) {
         <Box className={classes.root}>
             <Grid container spacing="1" justify="space-evenly" alignItems="flex-start">
                 <Grid item>
-                    <Button variant="contained">
+                    <AcButton variant="contained">
                         <ToysRoundedIcon />
-                    </Button>
+                    </AcButton>
                 </Grid>
                 <Grid item>
-                    <Button variant="contained">MODE</Button>
+                    <AcButton variant="contained">MODE</AcButton>
                 </Grid>
                 <Grid item>
                     <ButtonGroup orientation="vertical">
-                        <Button variant="contained">
+                        <AcButton variant="contained">
                             <AddIcon />
-                        </Button>
-                        <Button variant="contained">
+                        </AcButton>
+                        <AcButton variant="contained">
                             <RemoveIcon />
-                        </Button>
+                        </AcButton>
                     </ButtonGroup>
                 </Grid>
             </Grid>
             <Grid container>
             <Grid item>
-                <Button variant="contained" color="secondary">
-                    <PowerSettingsNewIcon />
+                <Button variant="contained" color="primary">
+                    <PowerSettingsNewIcon style={{color: "white"}}/>
                 </Button>
             </Grid>
             </Grid>
