@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid, Button, ButtonGroup, Box, makeStyles, withStyles } from "@material-ui/core";
-import GridSpace from "./GridSpace";
 
 import ToysRoundedIcon from "@material-ui/icons/ToysRounded";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
