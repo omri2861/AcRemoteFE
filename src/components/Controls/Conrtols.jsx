@@ -6,12 +6,6 @@ import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    margin: theme.spacing(2),
-  },
-}));
-
 const AcButton = withStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.grey[600],
@@ -20,10 +14,9 @@ const AcButton = withStyles((theme) => ({
 }))(Button);
 
 function Controls(props) {
-  const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
+    <Box>
       <Grid container spacing="1" justify="space-evenly" alignItems="flex-start">
         <Grid item>
           <AcButton variant="contained">

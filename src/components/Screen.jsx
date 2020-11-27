@@ -6,8 +6,6 @@ import AcUnitIcon from '@material-ui/icons/AcUnit';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(2),
-    // backgroundColor: "#8BAC0F",
     backgroundColor: '#616b3c',
   },
   divider: {

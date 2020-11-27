@@ -2,7 +2,7 @@ import './App.css';
 import Paper from '@material-ui/core/Paper';
 import Controls from './Controls/Conrtols';
 import Screen from './Screen';
-import {createMuiTheme, ThemeProvider} from '@material-ui/core';
+import {createMuiTheme, makeStyles, ThemeProvider} from '@material-ui/core';
 
 const theme = createMuiTheme({
   palette: {
@@ -13,10 +13,22 @@ const theme = createMuiTheme({
   },
 });
 
+const classes = makeStyles((theme) => ({
+  root: {
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "calc(10px + 2vmin)",
+    padding: theme.spacing(2),
+  }
+}));
+
 function App() {
   // TODO: Find a better way to align content to the middle
   return (
-    <div className="App">
+    <div className={classes.root}>
       <ThemeProvider theme={theme}>
         <Paper elevation={10}>
           <Screen />
