@@ -1,7 +1,5 @@
-import Paper from '@material-ui/core/Paper';
-import Controls from './Controls/Conrtols';
-import Screen from './Screen';
 import {createMuiTheme, makeStyles, ThemeProvider} from '@material-ui/core';
+import Controller from './Controller';
 
 const theme = createMuiTheme({
   palette: {
@@ -14,17 +12,13 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "calc(10px + 2vmin)",
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 'calc(10px + 2vmin)',
   },
-  controller: {
-    // NOTE: This call raises a warning for some reason. Find out why and fix it
-    padding: theme.spacing(2),
-  }
 }));
 
 function App() {
@@ -33,10 +27,7 @@ function App() {
   return (
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
-        <Paper elevation={10} className={classes.controller}>
-          <Screen />
-          <Controls />
-        </Paper>
+        <Controller />
       </ThemeProvider>
     </div>
   );
