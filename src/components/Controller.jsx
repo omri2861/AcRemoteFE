@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 
 import Paper from '@material-ui/core/Paper';
 
@@ -16,10 +17,12 @@ const useStyles = makeStyles((theme) => ({
 function Controller(props) {
   const classes = useStyles();
 
+  const [temprature, setTemprature] = useState(21);
+
   return (
     <Paper elevation={10} className={classes.root}>
-      <Screen />
-      <Controls />
+      <Screen temprature={temprature}/>
+      <Controls setState={setTemprature}/>
     </Paper>
   );
 }

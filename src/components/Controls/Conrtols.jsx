@@ -15,6 +15,18 @@ const AcButton = withStyles((theme) => ({
 }))(Button);
 
 function Controls(props) {
+  function onPlus() {
+    props.setState((prevTemprature) => {
+      return prevTemprature + 1;
+    });
+  }
+
+  function onMinus() {
+    props.setState((prevTemprature) => {
+      return prevTemprature - 1;
+    });
+  }
+
   return (
     <Box>
       <Grid container spacing="1" justify="space-evenly" alignItems="flex-start">
@@ -28,10 +40,10 @@ function Controls(props) {
         </Grid>
         <Grid item>
           <ButtonGroup orientation="vertical">
-            <AcButton variant="contained">
+            <AcButton variant="contained" onClick={onPlus}>
               <AddIcon />
             </AcButton>
-            <AcButton variant="contained">
+            <AcButton variant="contained" onClick={onMinus}>
               <RemoveIcon />
             </AcButton>
           </ButtonGroup>

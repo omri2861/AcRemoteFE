@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Screen() {
+function Screen(props) {
   const classes = useStyles();
 
   return (
@@ -26,7 +26,7 @@ function Screen() {
       <Divider className={classes.divider} />
       <p style={{textAlign: 'right'}}>9:17</p>
       <Divider className={classes.divider} />
-      <p>21&#xb0;</p>
+      <p>{props.temprature}&#xb0;</p>
     </Card>
   );
 }
