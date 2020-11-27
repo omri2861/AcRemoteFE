@@ -7,23 +7,21 @@ import AcUnitIcon from '@material-ui/icons/AcUnit';
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: '#616b3c',
+    // TODO: Find a way to move margin out from the screen, since the screen shouldn't position itself
+    marginBottom: theme.spacing(2),
+    color: 'black',
   },
   divider: {
     height: '1px',
     backgroundColor: 'black',
   },
-  screenText: {
-    color: 'black',
-  },
 }));
 
 function Screen() {
   const classes = useStyles();
-  // TODO: Find out how to do it properly
-  const screenClasses = classes.screenText + ' ' + classes.root;
 
   return (
-    <Card className={screenClasses} variant="outlined">
+    <Card className={classes.root} variant="outlined">
       <AcUnitIcon />
       <Divider className={classes.divider} />
       <p style={{textAlign: 'right'}}>9:17</p>

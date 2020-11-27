@@ -1,4 +1,3 @@
-import './App.css';
 import Paper from '@material-ui/core/Paper';
 import Controls from './Controls/Conrtols';
 import Screen from './Screen';
@@ -13,7 +12,7 @@ const theme = createMuiTheme({
   },
 });
 
-const classes = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
     display: "flex",
@@ -21,16 +20,19 @@ const classes = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     fontSize: "calc(10px + 2vmin)",
+  },
+  controller: {
     padding: theme.spacing(2),
   }
 }));
 
 function App() {
   // TODO: Find a better way to align content to the middle
+  const classes = useStyles();
   return (
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
-        <Paper elevation={10}>
+        <Paper elevation={10} className={classes.controller}>
           <Screen />
           <Controls />
         </Paper>
