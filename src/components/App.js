@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "calc(10px + 2vmin)",
   },
   controller: {
+    // NOTE: This call raises a warning for some reason. Find out why and fix it
     padding: theme.spacing(2),
   }
 }));
