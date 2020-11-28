@@ -8,14 +8,20 @@ import PowerButton from './PowerButton';
 
 function Controls(props) {
   function increaseTemprature() {
-    props.setState((prevTemprature) => {
-      return prevTemprature + 1;
+    props.setState((prevState) => {
+      return {
+        ...prevState,
+        temprature: prevState.temprature + 1,
+      };
     });
   }
 
   function decreaseTemprature() {
-    props.setState((prevTemprature) => {
-      return prevTemprature - 1;
+    props.setState((prevState) => {
+      return {
+        ...prevState,
+        temprature: prevState.temprature + 1,
+      };
     });
   }
 

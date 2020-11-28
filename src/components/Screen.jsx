@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Card, makeStyles, Divider} from '@material-ui/core';
 
-import AcUnitIcon from '@material-ui/icons/AcUnit';
+import modes from "../acModes";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,13 +20,18 @@ const useStyles = makeStyles((theme) => ({
 function Screen(props) {
   const classes = useStyles();
 
+  function getTime() {
+    let currentTime = new Date();
+    return currentTime.getHours() + ":" + currentTime.getMinutes();
+  }
+
   return (
     <Card className={classes.root} variant="outlined">
-      <AcUnitIcon />
+      {modes[props.acState.mode]}
       <Divider className={classes.divider} />
-      <p style={{textAlign: 'right'}}>9:17</p>
+      <p style={{textAlign: 'right'}}>{getTime()}</p>
       <Divider className={classes.divider} />
-      <p>{props.temprature}&#xb0;</p>
+      <p>{props.acState.temprature}&#xb0;</p>
     </Card>
   );
 }

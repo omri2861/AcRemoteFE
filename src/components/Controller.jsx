@@ -17,12 +17,16 @@ const useStyles = makeStyles((theme) => ({
 function Controller(props) {
   const classes = useStyles();
 
-  const [temprature, setTemprature] = useState(21);
+  const [acState, setAcState] = useState({
+    temprature: 21,
+    mode: 1,
+    fanSpeed: 0,
+  });
 
   return (
     <Paper elevation={10} className={classes.root}>
-      <Screen temprature={temprature}/>
-      <Controls setState={setTemprature}/>
+      <Screen acState={acState}/>
+      <Controls setState={setAcState}/>
     </Paper>
   );
 }
