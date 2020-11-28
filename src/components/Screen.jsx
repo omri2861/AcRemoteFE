@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Card, makeStyles, Divider} from '@material-ui/core';
 
-import modes from "../acModes";
+import modes from '../acModes';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,15 +21,24 @@ function Screen(props) {
   const classes = useStyles();
 
   function getTime() {
-    let currentTime = new Date();
-    return currentTime.getHours() + ":" + currentTime.getMinutes();
+    let now = new Date();
+    return now.getHours() + ':' + now.getMinutes();
   }
+
+  const [currentTime, setCurrentTime] = React.useState(getTime());
+
+  React.useEffect(() => {
+    // No need to refresh more than 1 minute
+    const interval = setInterval(() => setCurrentTime(getTime()), 60 * 1000);
+
+    return () => clearInterval(interval);
+  });
 
   return (
     <Card className={classes.root} variant="outlined">
       {modes[props.acState.mode]}
       <Divider className={classes.divider} />
-      <p style={{textAlign: 'right'}}>{getTime()}</p>
+      <p style={{textAlign: 'right'}}>{currentTime}</p>
       <Divider className={classes.divider} />
       <p>{props.acState.temprature}&#xb0;</p>
     </Card>
