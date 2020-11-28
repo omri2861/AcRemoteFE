@@ -7,11 +7,11 @@ import ToysIcon from '@material-ui/icons/Toys';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 
 const modes = [
-  <ChangeHistoryIcon />,
-  <AcUnitIcon />,
-  <WbSunnyIcon />,
-  <ToysIcon />,
-  <OpacityIcon />,
+  ChangeHistoryIcon,
+  AcUnitIcon,
+  WbSunnyIcon,
+  ToysIcon,
+  OpacityIcon,
 ];
 
 export default modes;

@@ -40,9 +40,17 @@ function Screen(props) {
     return () => clearInterval(interval);
   });
 
+  function renderModeIcons(mode) {
+    return modes.map((ModeIcon, index) => (
+      // We don't use conditionaly rendering on purpose, since we want the icons to move like in the
+      // real remote
+      <ModeIcon style={{visibility: index === mode ? 'visible' : 'hidden'}} />
+    ));
+  }
+
   return (
     <Card className={classes.root} variant="outlined">
-      {modes[props.acState.mode]}
+      {renderModeIcons(props.acState.mode)}
       <Divider className={classes.divider} />
       <p style={{textAlign: 'right'}}>{currentTime}</p>
       <Divider className={classes.divider} />
