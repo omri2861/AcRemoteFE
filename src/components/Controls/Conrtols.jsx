@@ -8,21 +8,26 @@ import PowerButton from './PowerButton';
 
 import modes from '../../acModes';
 
+const lowestTemprature = 17;
+const highestTemprature = 27;
+
 function Controls(props) {
   function increaseTemprature() {
     props.setState((prevState) => {
+      let newTemprature = prevState.temprature + 1;
       return {
         ...prevState,
-        temprature: prevState.temprature + 1,
+        temprature: newTemprature < highestTemprature ? newTemprature : highestTemprature,
       };
     });
   }
 
   function decreaseTemprature() {
     props.setState((prevState) => {
+      let newTemprature = prevState.temprature - 1;
       return {
         ...prevState,
-        temprature: prevState.temprature - 1,
+        temprature: newTemprature > lowestTemprature ? newTemprature : lowestTemprature,
       };
     });
   }
