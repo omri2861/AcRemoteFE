@@ -12,7 +12,7 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '100vh',
+    minHeight: '80vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
