@@ -22,7 +22,7 @@ function Controls(props) {
     props.setState((prevState) => {
       return {
         ...prevState,
-        temprature: prevState.temprature + 1,
+        temprature: prevState.temprature - 1,
       };
     });
   }
