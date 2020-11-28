@@ -1,27 +1,19 @@
 import React from 'react';
-import {Grid, Button, ButtonGroup, Box, withStyles} from '@material-ui/core';
+import {Grid, Box} from '@material-ui/core';
 
-import ToysRoundedIcon from '@material-ui/icons/ToysRounded';
-import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
-
-const AcButton = withStyles((theme) => ({
-  root: {
-    // TODO: override universal colors, so it can be changed easily
-    backgroundColor: theme.palette.grey[600],
-    color: theme.palette.common.white,
-  },
-}))(Button);
+import AcButton from './AcButton';
+import FanButton from './FanButton';
+import TempratureControls from './TempratureConrtols';
+import PowerButton from './PowerButton';
 
 function Controls(props) {
-  function onPlus() {
+  function increaseTemprature() {
     props.setState((prevTemprature) => {
       return prevTemprature + 1;
     });
   }
 
-  function onMinus() {
+  function decreaseTemprature() {
     props.setState((prevTemprature) => {
       return prevTemprature - 1;
     });
@@ -31,29 +23,18 @@ function Controls(props) {
     <Box>
       <Grid container spacing="1" justify="space-evenly" alignItems="flex-start">
         <Grid item>
-          <AcButton variant="contained">
-            <ToysRoundedIcon />
-          </AcButton>
+          <FanButton />
         </Grid>
         <Grid item>
           <AcButton variant="contained">MODE</AcButton>
         </Grid>
         <Grid item>
-          <ButtonGroup orientation="vertical">
-            <AcButton variant="contained" onClick={onPlus}>
-              <AddIcon />
-            </AcButton>
-            <AcButton variant="contained" onClick={onMinus}>
-              <RemoveIcon />
-            </AcButton>
-          </ButtonGroup>
+          <TempratureControls onPlus={increaseTemprature} onMinus={decreaseTemprature} />
         </Grid>
       </Grid>
       <Grid container>
         <Grid item>
-          <Button variant="contained" color="primary">
-            <PowerSettingsNewIcon style={{color: 'white'}} />
-          </Button>
+          <PowerButton />
         </Grid>
       </Grid>
     </Box>
