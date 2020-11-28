@@ -6,6 +6,8 @@ import FanButton from './FanButton';
 import TempratureControls from './TempratureConrtols';
 import PowerButton from './PowerButton';
 
+import modes from '../../acModes';
+
 function Controls(props) {
   function increaseTemprature() {
     props.setState((prevState) => {
@@ -25,6 +27,15 @@ function Controls(props) {
     });
   }
 
+  function changeMode() {
+    props.setState((prevState) => {
+      return {
+        ...prevState,
+        mode: (prevState.mode + 1) % modes.length,
+      };
+    });
+  }
+
   return (
     <Box>
       <Grid container spacing="1" justify="space-evenly" alignItems="flex-start">
@@ -32,7 +43,9 @@ function Controls(props) {
           <FanButton />
         </Grid>
         <Grid item>
-          <AcButton variant="contained">MODE</AcButton>
+          <AcButton variant="contained" onClick={changeMode}>
+            MODE
+          </AcButton>
         </Grid>
         <Grid item>
           <TempratureControls onPlus={increaseTemprature} onMinus={decreaseTemprature} />
