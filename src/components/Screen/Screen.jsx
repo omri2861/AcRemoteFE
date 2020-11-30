@@ -3,18 +3,7 @@ import React from 'react';
 import {Box, Card, makeStyles, Divider, Typography} from '@material-ui/core';
 
 import ModeBar from './ModeBar';
-
-import SignalCellular1BarIcon from '@material-ui/icons/SignalCellular1Bar';
-import SignalCellular2BarIcon from '@material-ui/icons/SignalCellular2Bar';
-import SignalCellular3BarIcon from '@material-ui/icons/SignalCellular3Bar';
-import SignalCellular4BarIcon from '@material-ui/icons/SignalCellular4Bar';
-
-const fanSpeeds = [
-  <SignalCellular1BarIcon />,
-  <SignalCellular2BarIcon />,
-  <SignalCellular3BarIcon />,
-  <SignalCellular4BarIcon />,
-];
+import FanSpeedIndicator from './FanSpeedIndicator';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,15 +49,7 @@ function Screen(props) {
       <Divider className={classes.divider} />
       <p className={classes.degrees}>{props.acState.temprature}&#xb0;</p>
       <Divider className={classes.divider} />
-      <Box textAlign="right">
-        <Typography
-          style={{
-            visibility: props.acState.fanSpeed === fanSpeeds.length - 1 ? 'visible' : 'hidden',
-          }}>
-          AUTO
-        </Typography>
-        {fanSpeeds[props.acState.fanSpeed]}
-      </Box>
+      <FanSpeedIndicator fanSpeed={props.acState.fanSpeed}/>
     </Card>
   );
 }
