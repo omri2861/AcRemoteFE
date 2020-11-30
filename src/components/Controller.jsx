@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Paper from '@material-ui/core/Paper';
 
 import Controls from './Controls/Conrtols';
-import Screen from './Screen';
+import Screen from './Screen/Screen';
 import {makeStyles} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({

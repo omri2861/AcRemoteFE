@@ -6,7 +6,7 @@ import FanButton from './FanButton';
 import TempratureControls from './TempratureConrtols';
 import PowerButton from './PowerButton';
 
-import modes from '../../acModes';
+import modes from '../Screen/acModes';
 
 const lowestTemprature = 17;
 const highestTemprature = 27;

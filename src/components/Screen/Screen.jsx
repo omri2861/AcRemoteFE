@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Box, Card, makeStyles, Divider, Typography} from '@material-ui/core';
 
-import modes from '../acModes';
+import modes from './acModes';
 
 import SignalCellular1BarIcon from '@material-ui/icons/SignalCellular1Bar';
 import SignalCellular2BarIcon from '@material-ui/icons/SignalCellular2Bar';
