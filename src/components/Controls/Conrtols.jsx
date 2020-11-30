@@ -7,6 +7,7 @@ import TempratureControls from './TempratureConrtols';
 import PowerButton from './PowerButton';
 
 import {modes} from '../Screen/ModeBar';
+import {fanSpeeds} from '../Screen/FanSpeedIndicator';
 
 const lowestTemprature = 17;
 const highestTemprature = 27;
@@ -45,7 +46,7 @@ function Controls(props) {
     props.setState((prevState) => {
       return {
         ...prevState,
-        fanSpeed: (prevState.fanSpeed + 1) % 4,
+        fanSpeed: (prevState.fanSpeed + 1) % fanSpeeds.length,
       };
     });
   }
