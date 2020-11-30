@@ -1,9 +1,10 @@
 import React from 'react';
 
-import {Box, Card, makeStyles, Divider, Typography} from '@material-ui/core';
+import {Card, makeStyles} from '@material-ui/core';
 
 import ModeBar from './ModeBar';
 import FanSpeedIndicator from './FanSpeedIndicator';
+import AcDivider from './AcDivider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,10 +15,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '3rem',
     padding: '10px',
     fontFamily: 'Digital7',
-  },
-  divider: {
-    height: '1px',
-    backgroundColor: 'black',
   },
   degrees: {
     margin: '20px 10px',
@@ -44,11 +41,11 @@ function Screen(props) {
   return (
     <Card className={classes.root} variant="outlined">
       <ModeBar mode={props.acState.mode}/>
-      <Divider className={classes.divider} />
+      <AcDivider />
       <p style={{textAlign: 'right'}}>{currentTime}</p>
-      <Divider className={classes.divider} />
+      <AcDivider />
       <p className={classes.degrees}>{props.acState.temprature}&#xb0;</p>
-      <Divider className={classes.divider} />
+      <AcDivider />
       <FanSpeedIndicator fanSpeed={props.acState.fanSpeed}/>
     </Card>
   );
