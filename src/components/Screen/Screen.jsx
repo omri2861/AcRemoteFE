@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Box, Card, makeStyles, Divider, Typography} from '@material-ui/core';
 
-import modes from './acModes';
+import ModeBar from './ModeBar';
 
 import SignalCellular1BarIcon from '@material-ui/icons/SignalCellular1Bar';
 import SignalCellular2BarIcon from '@material-ui/icons/SignalCellular2Bar';
@@ -52,17 +52,9 @@ function Screen(props) {
     return () => clearInterval(interval);
   });
 
-  function renderModeIcons(mode) {
-    return modes.map((ModeIcon, index) => (
-      // We don't use conditionaly rendering on purpose, since we want the icons to move like in the
-      // real remote
-      <ModeIcon style={{visibility: index === mode ? 'visible' : 'hidden'}} />
-    ));
-  }
-
   return (
     <Card className={classes.root} variant="outlined">
-      {renderModeIcons(props.acState.mode)}
+      <ModeBar mode={props.acState.mode}/>
       <Divider className={classes.divider} />
       <p style={{textAlign: 'right'}}>{currentTime}</p>
       <Divider className={classes.divider} />
