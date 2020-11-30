@@ -41,11 +41,20 @@ function Controls(props) {
     });
   }
 
+  function changeFanSpeed() {
+    props.setState((prevState) => {
+      return {
+        ...prevState,
+        fanSpeed: (prevState.fanSpeed + 1) % 4,
+      };
+    });
+  }
+
   return (
     <Box>
       <Grid container spacing="1" justify="space-evenly" alignItems="flex-start">
         <Grid item>
-          <FanButton />
+          <FanButton onClick={changeFanSpeed}/>
         </Grid>
         <Grid item>
           <AcButton variant="contained" onClick={changeMode}>
